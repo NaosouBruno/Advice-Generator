@@ -4,7 +4,7 @@ async function getAdvice() {
   const advice = await fetch(baseUrl);
   const adviceData = await advice.json();
   const advices = { advice: adviceData.slip.advice, id: adviceData.slip.id };
-  console.log("json", advices);
+  /* console.log("json", advices); */
   /*  advices.push(adviceData); */
   return advices;
 }

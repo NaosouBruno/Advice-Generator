@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function Partition(props) {
+function PartitionDesktop(props) {
   return (
     <svg width={444} height={16} xmlns="http://www.w3.org/2000/svg" {...props}>
       <g fill="none" fillRule="evenodd">
@@ -14,4 +14,4 @@ function Partition(props) {
   );
 }
 
-export default Partition;
+export default PartitionDesktop;

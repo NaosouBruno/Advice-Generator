@@ -1,10 +1,13 @@
 import "./card.scss";
+
 import getAdvice from "../../../services/getAdvice";
 import { useState, useEffect } from "react";
 import PartitionMobile from "../../atoms/PartitionLogo/PartitionMobile";
+import PartitionDesktop from "../../atoms/PartitionLogo/PartitionDesktop";
 import ButtonLogo from "../../atoms/ButtonLogo/ButtonLogo";
 export function Card() {
   const [advice, setAdvice] = useState({ advices: "", id: "" });
+  const [dimensions, setDimensions] = useState(false);
   useEffect(() => {
     const fetch = async () => {
       let data = await getAdvice();
@@ -15,6 +18,17 @@ export function Card() {
       });
     };
     fetch();
+    const handleResize = () => {
+      if (window.innerWidth > 500) {
+        setDimensions(true);
+      } else {
+        setDimensions(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return (_) => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const reRender = async () => {
@@ -31,7 +45,9 @@ export function Card() {
         <span className="card--typographyId">ADVICE #{advice.id}</span>
         <span className="card--typographyAdvice">"{advice.advices}"</span>
       </div>
-      <PartitionMobile />
+      <span className="card--partitions">
+        {dimensions ? <PartitionDesktop /> : <PartitionMobile />}
+      </span>
 
       <button className="card--btnRandom" onClick={reRender}>
         <ButtonLogo />
