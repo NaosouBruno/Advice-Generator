@@ -1,11 +1,7 @@
 import { Card } from "./components/organism/Card";
 
 function App() {
-  return (
-    <div className="App">
-      <Card />
-    </div>
-  );
+  return <Card />;
 }
 
 export default App;
