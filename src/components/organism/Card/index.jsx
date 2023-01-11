@@ -41,15 +41,23 @@ export function Card() {
   };
   return (
     <main className="card">
-      <div className="card--typography">
-        <span className="card--typographyId">ADVICE #{advice.id}</span>
-        <span className="card--typographyAdvice">"{advice.advices}"</span>
+      <div className="card__typography">
+        <span className="card__typographyId" data-testid="random-adviceId">
+          ADVICE #{advice.id}
+        </span>
+        <span className="card__typographyAdvice" data-testid="random-advice">
+          {advice.advices}
+        </span>
       </div>
-      <span className="card--partitions">
+      <span className="card__partitions">
         {dimensions ? <PartitionDesktop /> : <PartitionMobile />}
       </span>
 
-      <button className="card--btnRandom" onClick={reRender}>
+      <button
+        className="card__btnRandom"
+        data-testid="random-button"
+        onClick={reRender}
+      >
         <ButtonLogo />
       </button>
     </main>

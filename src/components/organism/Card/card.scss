@@ -9,27 +9,27 @@
   border-radius: 5%;
   min-width: 90%;
   position: relative;
-  &--typography {
+  &__typography {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 15px;
     text-align: center;
   }
-  &--typographyId {
+  &__typographyId {
     color: $neonGreen;
     font-size: 18px;
     letter-spacing: 0.3em;
   }
-  &--typographyAdvice {
+  &__typographyAdvice {
     margin-top: 15px;
     color: $lightCyan;
     font-weight: 800;
   }
-  &--partitions {
+  &__partitions {
     margin-bottom: 20px;
   }
-  &--btnRandom {
+  &__btnRandom {
     width: 60px;
     height: 60px;
     border-radius: 50%;
